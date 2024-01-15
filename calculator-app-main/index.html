@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" href="assets/fonts/LeagueSpartan-VariableFont_wght.ttf" as="font" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <title>Calculator App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>calc</h1>
+    <div class="theme-section">
+      <h2>THEME</h2>
+      <div class="toggle-container">
+        <p><span>1</span><span>2</span><span>3</span></p>
+        <div class="theme-toggle">
+          <input aria-label="Light Theme" name="theme-switch" class="active" type="radio" checked id="theme-toggle-1" value="light" />
+          <label for="theme-toggle-1"></label>
+          <input aria-label="Super Light Theme" name="theme-switch" type="radio" id="theme-toggle-2" value="extraLight" />
+          <label for="theme-toggle-2"></label>
+          <input aria-label="Dark Theme" name="theme-switch" type="radio" id="theme-toggle-3" value="dark" />
+          <label for="theme-toggle-3"></label>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="screen" class="calc-screen" data-answered="false">0</div>
+    <div class="button-board">
+      <div class="btn-row">
+        <button id="7" onclick="display('7')">7</button>
+        <button id="8" onclick="display('8')">8</button>
+        <button id="9" onclick="display('9')">9</button>
+        <button class="function-btn" id="delete" onclick="clearAll()">DEL</button>
+      </div>
+      <div class="btn-row">
+        <button id="4" onclick="display('4')">4</button>
+        <button id="5" onclick="display('5')">5</button>
+        <button id="6" onclick="display('6')">6</button>
+        <button id="plus" onclick="display('+')">+</button>
+      </div>
+      <div class="btn-row">
+        <button id="1" onclick="display('1')">1</button>
+        <button id="2" onclick="display('2')">2</button>
+        <button id="3" onclick="display('3')">3</button>
+        <button id="minus" onclick="display('-')">-</button>
+      </div>
+      <div class="btn-row">
+        <button id="dot" onclick="display('.')">.</button>
+        <button id="0" onclick="display('0')">0</button>
+        <button id="divide" onclick="display('/')">/</button>
+        <button id="multiply" onclick="display('x')">x</button>
+      </div>
+      <div class="btn-row">
+        <button class="half-row function-btn" id="reset" onclick="clearAll()">RESET</button>
+        <button class="half-row equal-btn" id="equal" onclick="calculate()">=</button>
+      </div>
+    </div>
+  </main>
+  <script src="theme-toggle.js"></script>
+  <script src="calculator.js"></script>
+</body>
+</html>
